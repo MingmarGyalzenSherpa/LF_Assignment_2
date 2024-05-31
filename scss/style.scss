@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Mixins*/
+@mixin flex(
+  $flex-direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 2px
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+/*
+Header
+*/
+
+.header {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 140px;
+  background-color: black;
+  @include flex($justify-content: start);
+  nav {
+    display: inline-block;
+  }
+
+  &__hamburger-icon-wrapper {
+    width: 21px;
+    height: 21px;
+  }
+
+  &__logo-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__cart-icon-wrapper {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__search-bar {
+    flex-shrink: 1;
+    padding: 0 10px;
+    border-radius: 50px;
+    min-width: 250px;
+    height: 34px;
+    background-color: white;
+    @include flex($justify-content: start, $align-items: center);
+    border: 3px solid green;
+    &:active {
+      border: 1px solid orange;
+    }
+
+    &__icon-wrapper {
+      width: 18px;
+      height: 18px;
+    }
+
+    &__input {
+      border: none;
+      flex-grow: 1;
+      &:active {
+        border: none;
+      }
+    }
+  }
+
+  //   background for hero
+  //   background: radial-gradient(
+  //     circle,
+  //     rgb(27, 56, 90) 32%,
+  //     rgb(21, 47, 82) 58%,
+  //     rgb(12, 24, 46) 96%
+  //   );
+}
+
+.theme {
+  min-width: 60px;
+  @include flex($justify-content: start, $align-items: start);
+  &__icon {
+    width: 17px;
+  }
+}

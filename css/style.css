@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Mixins*/
+/*
+Header
+*/
+.header {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 140px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2px;
+}
+.header nav {
+  display: inline-block;
+}
+.header__hamburger-icon-wrapper {
+  width: 21px;
+  height: 21px;
+}
+.header__logo-wrapper {
+  width: 60px;
+  height: 60px;
+}
+.header__cart-icon-wrapper {
+  width: 18px;
+  height: 18px;
+}
+.header__search-bar {
+  flex-shrink: 1;
+  padding: 0 10px;
+  border-radius: 50px;
+  min-width: 250px;
+  height: 34px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2px;
+  border: 3px solid green;
+}
+.header__search-bar:active {
+  border: 1px solid orange;
+}
+.header__search-bar__icon-wrapper {
+  width: 18px;
+  height: 18px;
+}
+.header__search-bar__input {
+  border: none;
+  flex-grow: 1;
+}
+.header__search-bar__input:active {
+  border: none;
+}
+
+.theme {
+  min-width: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 2px;
+}
+.theme__icon {
+  width: 17px;
+}
+
+/*# sourceMappingURL=style.css.map */
