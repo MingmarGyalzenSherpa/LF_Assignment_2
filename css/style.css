@@ -8,6 +8,8 @@ html {
   font-size: 16px;
   font-family: sans-serif;
   --primary-color: rgba(241, 74, 22, 1);
+  --primary-hover-color: rgb(243, 227, 222);
+  --ghost-hover-color: rgb(243, 227, 222);
   --theme-primary: black;
   --theme-secondary: white;
 }
@@ -35,6 +37,10 @@ img {
   font-weight: 700;
   flex-grow: 1;
 }
+.btn:hover {
+  background-color: var(--hover-color);
+  color: white;
+}
 .btn--primary {
   border: 1px solid transparent;
   color: white;
@@ -54,6 +60,10 @@ img {
   width: 21px;
   height: 21px;
   margin-bottom: 5px;
+}
+
+.list {
+  list-style-type: none;
 }
 
 /* Card */
@@ -115,7 +125,6 @@ img {
   gap: 20px;
   overflow: hidden;
   padding: 20px;
-  background-color: pink;
 }
 
 /* search bar */
@@ -150,10 +159,11 @@ img {
 Header
 */
 .header {
+  position: absolute;
+  width: 100%;
   padding: 10px;
   flex-wrap: wrap;
   min-height: 140px;
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -186,29 +196,46 @@ Header
   height: 21px;
 }
 .header__logo-wrapper {
+  margin-left: 25vw;
   width: 60px;
   height: 60px;
 }
 .header__cart-icon-wrapper {
   width: 18px;
   height: 18px;
+  margin-bottom: 5px;
 }
 
 .theme-toggler {
-  min-width: 60px;
-  background-color: grey;
+  position: relative;
+  min-width: 50px;
+  padding: 5px 0px;
+  background-color: black;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 2px;
 }
+.theme-toggler__shade {
+  right: 0;
+  position: absolute;
+  width: 25px;
+  background-color: grey;
+  height: 25px;
+  border-radius: 50%;
+}
+.theme-toggler__shade:hover {
+  background-color: rgb(79, 79, 79);
+}
 .theme-toggler__icon {
-  width: 17px;
-  background-color: red;
+  width: 25px;
+  height: 20px;
 }
 
 body {
+  position: relative;
   background-color: var(--theme-primary);
   color: var(--theme-secondary);
 }
@@ -216,11 +243,13 @@ body {
 /* HERO SECTION */
 .hero-section {
   min-height: 100vh;
-  background-color: grey;
+  background: radial-gradient(circle at left, rgb(35, 35, 63), rgb(30, 28, 44), rgb(14, 14, 15));
+  padding-top: 140px;
 }
 .hero-section__content {
   padding: 0 10px;
   max-width: 500px;
+  max-height: 400px;
 }
 .hero-section__content__title {
   max-width: 380px;
@@ -235,6 +264,8 @@ body {
   font-size: 1.1rem;
   color: rgb(164, 164, 164);
   line-height: 40px;
+  max-height: 100px;
+  overflow: hidden;
 }
 .hero-section__flex-wrapper {
   margin-top: 20px;
@@ -275,6 +306,7 @@ body {
 
 /* Popular Trends Section */
 .trend {
+  background: linear-gradient(180deg, rgb(29, 28, 42), black);
   overflow: hidden;
 }
 .trend__title {
@@ -297,7 +329,6 @@ body {
   text-align: center;
   border: 1px solid green;
   margin: 10px 20px;
-  background-color: pink;
 }
 .why-buy__title {
   font-size: 1.5rem;
@@ -467,6 +498,86 @@ body {
 }
 .qr-and-download-info__small-img-wrapper-2 {
   width: 190px;
+}
+
+/*footer */
+.footer {
+  background-color: rgb(55, 6, 101);
+  padding: 24px 24px 5px 24px;
+}
+
+.links {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+.links__list {
+  color: white;
+  font-weight: 400;
+  width: 100%;
+}
+.links__list li {
+  padding: 5px 0px;
+}
+.links__list__link {
+  padding: 10px 0;
+  text-decoration: none;
+  color: rgb(212, 209, 209);
+}
+.links__list__link:hover {
+  color: var(--primary-color);
+}
+
+.social-medias__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+.social-medias__img-wrapper {
+  width: 30px;
+  transition: all 0.5s linear;
+}
+.social-medias__img-wrapper:hover {
+  transform: scale(1.2);
+}
+
+.news-letter__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.news-letter__form__btn {
+  min-width: 200px;
+  padding: 0px 20px;
+}
+.news-letter__form__input {
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid var(--primary-color);
+  outline: none;
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 225px;
+  margin: 0 auto;
+}
+
+.rights-reserved {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

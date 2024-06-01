@@ -8,6 +8,8 @@ html {
   font-size: 16px;
   font-family: sans-serif;
   --primary-color: rgba(241, 74, 22, 1);
+  --primary-hover-color: rgb(243, 227, 222);
+  --ghost-hover-color: rgb(243, 227, 222);
   $primary-color: var(--primary-color);
   --theme-primary: black;
   --theme-secondary: white;
@@ -47,6 +49,11 @@ img {
   font-size: 1rem;
   font-weight: 700;
   flex-grow: 1;
+
+  &:hover {
+    background-color: var(--hover-color);
+    color: white;
+  }
   &--primary {
     border: 1px solid transparent;
     color: white;
@@ -66,6 +73,10 @@ img {
       margin-bottom: 5px;
     }
   }
+}
+
+.list {
+  list-style-type: none;
 }
 
 /* Card */
@@ -131,7 +142,6 @@ img {
   @include flex($gap: 20px, $justify-content: start);
   overflow: hidden;
   padding: 20px;
-  background-color: pink;
 }
 
 /* search bar */
@@ -165,14 +175,16 @@ Header
 */
 
 .header {
+  position: absolute;
+  width: 100%;
   padding: 10px;
   flex-wrap: wrap;
   min-height: 140px;
-  background-color: black;
   @include flex($flex-direction: column, $justify-content: start);
 
   &__row {
     width: 100%;
+    // align-items: baseline;
   }
 
   &__row--1 {
@@ -194,6 +206,7 @@ Header
   }
 
   &__logo-wrapper {
+    margin-left: calc(100vw / 4);
     width: 60px;
     height: 60px;
   }
@@ -201,6 +214,7 @@ Header
   &__cart-icon-wrapper {
     width: 18px;
     height: 18px;
+    margin-bottom: 5px;
   }
 
   //   background for hero
@@ -213,17 +227,33 @@ Header
 }
 
 .theme-toggler {
-  min-width: 60px;
-  background-color: grey;
-
+  position: relative;
+  min-width: 50px;
+  padding: 5px 0px;
+  background-color: black;
+  border-radius: 20px;
   @include flex($justify-content: space-between);
+
+  &__shade {
+    right: 0;
+    position: absolute;
+    width: 25px;
+    background-color: grey;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  &__shade:hover {
+    background-color: rgb(79, 79, 79);
+  }
   &__icon {
-    width: 17px;
-    background-color: red;
+    width: 25px;
+    height: 20px;
   }
 }
 
 body {
+  position: relative;
   background-color: var(--theme-primary);
   color: var(--theme-secondary);
 }
@@ -231,11 +261,18 @@ body {
 /* HERO SECTION */
 .hero-section {
   min-height: 100vh;
-  background-color: grey;
-
+  // background: linear-gradient(40deg, rgb(43, 45, 100), rgb(11, 11, 14));
+  background: radial-gradient(
+    circle at left,
+    rgb(35, 35, 63),
+    rgb(30, 28, 44),
+    rgb(14, 14, 15)
+  );
+  padding-top: 140px;
   &__content {
     padding: 0 10px;
     max-width: 500px;
+    max-height: 400px;
     &__title {
       max-width: 380px;
       color: var(--theme-secondary);
@@ -252,6 +289,8 @@ body {
       font-size: 1.1rem;
       color: rgba(164, 164, 164, 1);
       line-height: 40px;
+      max-height: 100px;
+      overflow: hidden;
     }
   }
 
@@ -297,6 +336,7 @@ body {
 /* Popular Trends Section */
 
 .trend {
+  background: linear-gradient(180deg, rgb(29, 28, 42), black);
   overflow: hidden;
   &__title {
     text-align: center;
@@ -319,7 +359,6 @@ body {
   text-align: center;
   border: 1px solid green;
   margin: 10px 20px;
-  background-color: pink;
   &__title {
     font-size: 1.5rem;
   }
@@ -459,7 +498,7 @@ body {
 }
 
 .qr-and-download-info {
-  margin: 30px  20px;
+  margin: 30px 20px;
   @include flex($flex-direction: column, $gap: 10px);
   padding: 20px 10px;
   text-align: center;
@@ -487,4 +526,75 @@ body {
   &__small-img-wrapper-2 {
     width: 190px;
   }
+}
+
+/*footer */
+.footer {
+  background-color: rgba(55, 6, 101, 1);
+  padding: 24px 24px 5px 24px;
+}
+
+.links {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  @include flex($flex-direction: column, $align-items: start, $gap: 10px);
+  &__list {
+    color: white;
+    font-weight: 400;
+    width: 100%;
+    li {
+      padding: 5px 0px;
+    }
+    &__link {
+      padding: 10px 0;
+      text-decoration: none;
+      color: rgb(212, 209, 209);
+    }
+
+    &__link:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.social-medias {
+  &__list {
+    @include flex($justify-content: start, $gap: 15px);
+  }
+  &__img-wrapper {
+    width: 30px;
+    transition: all 0.5s linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.news-letter__form {
+  @include flex($flex-direction: column, $gap: 10px);
+  margin-top: 10px;
+  &__btn {
+    min-width: 200px;
+    padding: 0px 20px;
+  }
+  &__input {
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid var(--primary-color);
+    outline: none;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 10px 20px;
+  }
+}
+
+.logo {
+  width: 225px;
+  margin: 0 auto;
+}
+
+.rights-reserved {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 700;
 }
