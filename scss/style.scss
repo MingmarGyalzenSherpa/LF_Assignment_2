@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 14px;
   font-family: sans-serif;
   --primary-color: rgba(241, 74, 22, 1);
   --primary-hover-color: rgb(243, 227, 222);
@@ -177,7 +177,7 @@ Header
 .header {
   position: absolute;
   width: 100%;
-  padding: 10px;
+  padding: 0px 10px;
   flex-wrap: wrap;
   min-height: 140px;
   @include flex($flex-direction: column, $justify-content: start);
@@ -214,7 +214,6 @@ Header
   &__cart-icon-wrapper {
     width: 18px;
     height: 18px;
-    margin-bottom: 5px;
   }
 
   //   background for hero
@@ -260,24 +259,23 @@ body {
 
 /* HERO SECTION */
 .hero-section {
-  min-height: 100vh;
+  height: 100vh;
   // background: linear-gradient(40deg, rgb(43, 45, 100), rgb(11, 11, 14));
   background: radial-gradient(
     circle at left,
-    rgb(35, 35, 63),
-    rgb(30, 28, 44),
-    rgb(14, 14, 15)
+    rgb(42, 42, 76),
+    rgb(24, 23, 28),
+    rgb(12, 12, 12)
   );
-  padding-top: 140px;
+  padding-top: 120px;
   &__content {
     padding: 0 10px;
-    max-width: 500px;
+    max-width: 300px;
     max-height: 400px;
     &__title {
-      max-width: 380px;
       color: var(--theme-secondary);
       // font-weight: 700;
-      font-size: 3.5rem;
+      font-size: 1.8rem;
 
       span {
         color: var(--primary-color);
@@ -286,10 +284,10 @@ body {
 
     &__desc {
       margin-top: 20px;
-      font-size: 1.1rem;
+      font-size: 0.8rem;
       color: rgba(164, 164, 164, 1);
       line-height: 40px;
-      max-height: 100px;
+      max-height: 60px;
       overflow: hidden;
     }
   }
@@ -300,8 +298,8 @@ body {
   }
 
   &__item-list {
-    flex-basis: 250px;
-    height: 800px;
+    flex-basis: 100px;
+    height: 100px;
     flex-grow: 0;
     flex-shrink: 0;
     border: 1px solid red;
@@ -319,7 +317,7 @@ body {
 
   &__arrow-down-container {
     margin-top: 50px;
-    min-height: 100px;
+    min-height: 50px;
     display: inline- block;
   }
 
