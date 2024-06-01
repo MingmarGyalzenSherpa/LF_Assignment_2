@@ -298,7 +298,7 @@ body {
   }
 
   &__item-list {
-    flex-basis: 100px;
+    flex-basis: 150px;
     height: 100px;
     flex-grow: 0;
     flex-shrink: 0;
@@ -322,6 +322,7 @@ body {
   }
 
   &__btn-container {
+    margin-top: 20px;
     width: 100%;
     justify-content: center;
   }
@@ -334,6 +335,8 @@ body {
 /* Popular Trends Section */
 
 .trend {
+  min-height: 100vh;
+  border: 1px solid red;
   background: linear-gradient(180deg, rgb(29, 28, 42), black);
   overflow: hidden;
   &__title {
@@ -346,6 +349,7 @@ body {
 
 /* why buy article */
 .why-buy {
+  min-height: 100vh;
   @include flex(
     $flex-direction: column,
     $justify-content: start,
