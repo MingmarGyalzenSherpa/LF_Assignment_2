@@ -210,7 +210,7 @@ Header
   &__arrow-down-container {
     margin-top: 50px;
     min-height: 100px;
-    display: inline-block;
+    display: inline- block;
   }
 }
 
@@ -223,5 +223,39 @@ Header
     text-align: center;
     font-size: 2.8rem;
     color: var(--theme-secondary);
+    margin-bottom: 3 0px;
+  }
+
+  &__item-list {
+    padding: 10px;
+    margin-left: 20px;
+    @include flex();
+    background-color: grey;
+  }
+}
+
+.trend-item-card {
+  width: 250px;
+  min-height: 465px;
+  color: var(--theme-secondary);
+  background-image: linear-gradient(0deg, rgb(64, 63, 63), rgb(252, 248, 248));
+  border-radius: 50px;
+  &__detail {
+    padding: 0 20px;
+    @include flex($flex-direction: column, $align-items: start, $gap: 10px);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  &__feature {
+    padding-left: 30px;
+  }
+
+  &__price {
+    color: rgba(252, 153, 24, 1);
+    font-size: 1.2rem;
   }
 }

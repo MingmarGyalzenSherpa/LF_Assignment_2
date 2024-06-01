@@ -199,7 +199,7 @@ Header
 .hero-section__arrow-down-container {
   margin-top: 50px;
   min-height: 100px;
-  display: inline-block;
+  display: inline- block;
 }
 
 /* Popular Trends Section */
@@ -210,6 +210,44 @@ Header
   text-align: center;
   font-size: 2.8rem;
   color: var(--theme-secondary);
+  margin-bottom: 3 0px;
+}
+.trend__item-list {
+  padding: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  background-color: grey;
+}
+
+.trend-item-card {
+  width: 250px;
+  min-height: 465px;
+  color: var(--theme-secondary);
+  background-image: linear-gradient(0deg, rgb(64, 63, 63), rgb(252, 248, 248));
+  border-radius: 50px;
+}
+.trend-item-card__detail {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+.trend-item-card__title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.trend-item-card__feature {
+  padding-left: 30px;
+}
+.trend-item-card__price {
+  color: rgb(252, 153, 24);
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
