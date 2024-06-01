@@ -10,7 +10,7 @@
     <!-- header -->
     <header class="header">
       <!-- header row 1 -->
-      <div class="header__row-1">
+      <div class="header__row header__row--1">
         <!-- nav -->
 
         <nav>
@@ -24,7 +24,7 @@
           <img src="./img/logo.png" alt="" />
         </div>
         <!--theme  -->
-        <div class="theme">
+        <div class="theme-toggler">
           <div class="theme__icon">
             <img src="./icon/moon.png" alt="" />
           </div>
@@ -38,17 +38,13 @@
         </div>
       </div>
       <!-- header row 2 -->
-      <div class="header__row-2">
+      <div class="header__row header__row--2">
         <!-- header search bar -->
-        <div class="header__search-bar">
-          <div class="header__search-bar__icon-wrapper">
+        <div class="search-bar">
+          <div class="search-bar__icon-wrapper">
             <img src="./icon/search.png" alt="" />
           </div>
-          <input
-            type="text"
-            class="header__search-bar__input"
-            placeholder="Search"
-          />
+          <input type="text" class="search-bar__input" placeholder="Search" />
         </div>
       </div>
     </header>
@@ -64,9 +60,10 @@
           pharetra, phasellus imperdiet fringilla turpis lectus risus erat.
           Commodo purus, eu sed suspendisse fermentum
         </p>
-        <div class="btn-container">
-          <button class="btn-primary">Shop now</button>
-          <button class="btn-ghost">
+        <!-- btn container -->
+        <div class="btn-container hero-section__btn-container">
+          <button class="btn hero-section__btn btn--primary">Shop now</button>
+          <button class="btn hero-section__btn btn--ghost">
             <span class="btn-ghost__icon-container"
               ><img src="icon/cart-orange.png" alt=""
             /></span>
@@ -74,10 +71,12 @@
           </button>
         </div>
       </div>
+      <!-- flex wrapper  -->
       <div class="hero-section__flex-wrapper">
-        <ul class="hero-section__item-list">
+        <!-- item list -->
+        <ul class="item-list hero-section__item-list">
           <li>
-            <div class="hero-section__card">
+            <div class="card hero-section__card">
               <div class="hero-item-card__title">Wireless Headphones</div>
               <div class="hero-item-card__price">
                 <span class="hero-item-card__price-discounted"> $120 </span>
@@ -85,7 +84,7 @@
               </div>
             </div>
           </li>
-          <li><div class="hero-section__card"></div></li>
+          <li><div class="card hero-section__card"></div></li>
           <!-- <li><div class="hero-section__item"></div></li>
           <li><div class="hero-section__item"></div></li>  -->
         </ul>
@@ -100,35 +99,163 @@
       <!-- trending title -->
       <h2 class="trend__title">Popular Trends</h2>
       <!-- trending ite,s -->
-      <div class="trend__item-list">
-        <section class="trend-item-card">
-          <div class="trend-item-card__img-wrapper">
+      <div class="item-list trend__item-list">
+        <section class="card">
+          <div class="card__img-wrapper">
             <img src="./img/headphones-square.png" alt="" />
           </div>
-          <div class="trend-item-card__detail">
-            <h3 class="trend-item-card__title">
+          <div class="card__detail">
+            <h3 class="card__title">
               Wireless Headphones with Dolby Surround Sound
             </h3>
-            <ul class="trend-item-card__feature">
+            <ul class="card__feature">
               <li>Truely Wireless</li>
               <li>Dolby Surround Sound</li>
               <li>13hrs of playback time</li>
               <li>Made in Germany</li>
             </ul>
-            <span class="trend-item-card__price"> $145 </span>
-            <div class="btn-container">
-              <button class="btn-ghost">
-                <span class="btn-ghost__icon-container"
+            <span class="card__price"> $145 </span>
+            <div class="btn-container card__btn-container">
+              <button class="btn card__btn btn--ghost">
+                <span class="btn--ghost__icon-container"
                   ><img src="icon/cart-orange.png" alt=""
                 /></span>
                 Add to card
               </button>
-              <button class="btn-primary">Buy now</button>
+              <button class="btn card__btn btn--primary">Buy now</button>
             </div>
           </div>
         </section>
       </div>
     </section>
-     
+
+    <!-- why buy -->
+    <article class="why-buy">
+      <h2 class="why-buy__title">Why buy directly from Musify?</h2>
+      <ul class="item-list why-buy__item-list">
+        <li>
+          <div class="item">
+            <div class="item__icon-wrapper">
+              <img src="./icon/deliver.png" alt="" />
+            </div>
+            <p class="item__title">Free delivery</p>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <div class="item__icon-wrapper">
+              <img src="./icon/checked.png" alt="" />
+            </div>
+            <p class="item__title">Verified Product</p>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <div class="item__icon-wrapper">
+              <img src="./icon/deliver.png" alt="" />
+            </div>
+            <p class="item__title">24/7 Customer Support</p>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- exclusive offers -->
+    <section class="exclusive-offer">
+      <h2 class="exclusive-offer__title">Exclusive Offer</h2>
+      <div class="exclusive-offer__img-wrapper">
+        <img src="./img/headphone-circle.png" alt="black headphone" />
+      </div>
+      <div class="exclusive-offer__detail">
+        <h3 class="exclusive-offer__detail__title">Offer ends in</h3>
+        <div class="time-left">
+          <div class="time-left__value">
+            <p class="time-left__value__info time-left__value__hour">02</p>
+            <p class="time-left__value__title">Hour</p>
+          </div>
+          <div class="time-left__value">
+            <p class="time-left__value__info time-left__value__hour">02</p>
+            <p class="time-left__value__title">Mins</p>
+          </div>
+          <div class="time-left__value">
+            <p class="time-left__value__info time-left__value__hour">02</p>
+            <p class="time-left__value__title">Secs</p>
+          </div>
+        </div>
+        <div class="btn-container exclusive-offer__btn-container">
+          <div class="btn exclusive-offer__btn btn--ghost">View details</div>
+          <div class="btn exclusive-offer__btn btn--primary">Shop now</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- other accessories -->
+    <section class="other-accessories">
+      <h2>Try our other Accessories</h2>
+      <div class="item-list other-accessories__item-list">
+        <div class="item other-accessories__item">
+          <img src="./img/watch.png" alt="" />
+        </div>
+        <div class="item other-accessories__item">
+          <img src="./img/siri.png" alt="" />
+        </div>
+        <div class="item other-accessories__item">
+          <img src="./img/home.png" alt="" />
+        </div>
+        <div class="item other-accessories__item">
+          <img src="./img/soundbar.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- new arrivals -->
+
+    <section class="new-arrivals">
+      <h2 class="new-arrivals__title">New Arrivals</h2>
+      <div class="item-list">
+        <section class="card">
+          <div class="card__img-wrapper">
+            <img src="./img/headphones-square.png" alt="" />
+          </div>
+          <div class="card__detail new-arrivals__card__detail">
+            <h3 class="card__title">
+              Wireless Headphones with Dolby Surround Sound
+            </h3>
+            <ul class="card__feature">
+              <li>Truely Wireless</li>
+              <li>Dolby Surround Sound</li>
+              <li>13hrs of playback time</li>
+              <li>Made in Germany</li>
+            </ul>
+            <span class="card__price"> $145 </span>
+            <div class="btn-container card__btn-container">
+              <button class="btn card__btn btn--ghost">
+                <span class="btn--ghost__icon-container"
+                  ><img src="icon/cart-orange.png" alt=""
+                /></span>
+                Add to card
+              </button>
+              <button class="btn card__btn btn--primary">Buy now</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="qr-and-download-info">
+      <div class="qr-and-download-info__qr-wrapper">
+        <img src="./img/qr-code.png" alt="qr code" />
+      </div>
+      <div class="qr-and-download-info__about">
+        <h2 class="qr-and-download-info__about__title">
+          Scan QR code for more
+        </h2>
+        <p>Now you can download the official musify app</p>
+        <div class="qr-and-download-info__small-img-wrapper-1">
+          <img src="./img/play-store.png" alt="qr code" />
+        </div>
+        <div class="qr-and-download-info__small-img-wrapper-2">
+          <img src="./img/app-store.png" alt="qr code" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
