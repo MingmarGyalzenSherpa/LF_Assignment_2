@@ -44,10 +44,87 @@
           <div class="header__search-bar__icon-wrapper">
             <img src="./icon/search.png" alt="" />
           </div>
-          <input type="text" class="header__search-bar__input" />
+          <input
+            type="text"
+            class="header__search-bar__input"
+            placeholder="Search"
+          />
         </div>
       </div>
     </header>
-    <section class="hero"></section>
+    <!-- hero -->
+    <section class="hero-section">
+      <!-- hero content -->
+      <div class="hero-section__content">
+        <h1 class="hero-section__content__title">
+          Let's Dive in <span>Music</span> World
+        </h1>
+        <p class="hero-section__content__desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          pharetra, phasellus imperdiet fringilla turpis lectus risus erat.
+          Commodo purus, eu sed suspendisse fermentum
+        </p>
+        <div class="btn-container">
+          <button class="btn-primary">Shop now</button>
+          <button class="btn-ghost">
+            <span class="btn-ghost__icon-container"
+              ><img src="icon/cart-orange.png" alt=""
+            /></span>
+            Add to card
+          </button>
+        </div>
+      </div>
+      <div class="hero-section__flex-wrapper">
+        <ul class="hero-section__item-list">
+          <li>
+            <div class="hero-section__card">
+              <div class="hero-item-card__title">Wireless Headphones</div>
+              <div class="hero-item-card__price">
+                <span class="hero-item-card__price-discounted"> $120 </span>
+                <span class="hero-item-card__price-actual"> $180 </span>
+              </div>
+            </div>
+          </li>
+          <li><div class="hero-section__card"></div></li>
+          <!-- <li><div class="hero-section__item"></div></li>
+          <li><div class="hero-section__item"></div></li>  -->
+        </ul>
+
+        <div class="hero-section__arrow-down-container">
+          <img src="./icon/arrow-down.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- Trending -->
+    <section class="trend">
+      <!-- trending title -->
+      <h2 class="trend__title">Popular Trends</h2>
+      <!-- trending ite,s -->
+      <div class="trend__item-list">
+        <section class="trend-item-card">
+          <div class="trend-item-card__img-wrapper">
+            <img src="./img/headphones-square.png" alt="" />
+          </div>
+          <h3 class="trend-item-card__title">
+            Wireless Headphones with Dolby Surround Sound
+          </h3>
+          <ul class="trend-item-card__feature">
+            <li>Truely Wireless</li>
+            <li>Dolby Surround Sound</li>
+            <li>13hrs of playback time</li>
+            <li>Made in Germany</li>
+          </ul>
+          <div class="btn-container">
+            <button class="btn-ghost">
+              <span class="btn-ghost__icon-container"
+                ><img src="icon/cart-orange.png" alt=""
+              /></span>
+              Add to card
+            </button>
+            <button class="btn-primary">Buy now</button>
+          </div>
+        </section>
+      </div>
+    </section>
   </body>
 </html>
