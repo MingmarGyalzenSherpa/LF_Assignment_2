@@ -261,7 +261,7 @@ body {
   margin-top: 20px;
   font-size: 0.8rem;
   color: rgb(164, 164, 164);
-  line-height: 40px;
+  line-height: 30px;
   max-height: 60px;
   overflow: hidden;
 }
@@ -269,12 +269,14 @@ body {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 2px;
+  overflow: hidden;
 }
 .hero-section__item-list {
-  flex-basis: 150px;
+  margin-left: 50px;
+  flex-basis: 180px;
   height: 100px;
   flex-grow: 0;
   flex-shrink: 0;
@@ -283,14 +285,49 @@ body {
   list-style-type: none;
   overflow: hidden;
   padding: 20px;
+  align-items: flex-end;
 }
 .hero-section__card {
-  min-height: 200px;
-  min-width: 250px;
-  background-color: pink;
+  padding: 10px;
+  position: relative;
+  min-height: 100px;
+  min-width: 200px;
+  background: linear-gradient(to left, rgb(10, 15, 34), rgb(111, 112, 115));
+  border-radius: 20px;
+  border: 1px solid white;
+}
+.hero-section__card__img-wrapper {
+  width: 80px;
+  left: 30%;
+  top: -50%;
+  position: absolute;
+}
+.hero-section__card__details {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.hero-section__card__details__title {
+  color: white;
+  margin-bottom: 5px;
+}
+.hero-section__card__details__price {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.hero-section__card__details__price--discounted {
+  color: orange;
+}
+.hero-section__card__details__price--actual {
+  text-decoration: line-through;
+  font-size: 0.8rem;
 }
 .hero-section__arrow-down-container {
-  margin-top: 50px;
+  margin-top: 20px;
   min-height: 50px;
   display: inline- block;
 }
@@ -319,7 +356,7 @@ body {
 
 /* why buy article */
 .why-buy {
-  min-height: 100vh;
+  background: linear-gradient(left, red, yellow);
   display: flex;
   flex-direction: column;
   justify-content: start;
