@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   font-family: sans-serif;
   --primary-color: rgba(241, 74, 22, 1);
   --primary-hover-color: rgb(243, 227, 222);
@@ -35,6 +35,9 @@ img {
   gap: $gap;
 }
 
+.hide {
+  display: none;
+}
 // buttons
 
 .btn-container {
@@ -81,14 +84,15 @@ img {
 
 /* Card */
 .card {
-  border-radius: 10%;
+  border-radius: 20px;
   flex-basis: 250px;
   flex-grow: 0;
 
   color: var(--theme-secondary);
-  border-radius: 10%;
+  // border-radius: 10%;
 
   &__img-wrapper {
+    width: 250px;
     height: 210px;
   }
   &__detail {
@@ -99,7 +103,6 @@ img {
     );
     border-bottom-left-radius: 20%;
     border-bottom-right-radius: 20%;
-
     padding: 10px 20px;
     @include flex($flex-direction: column, $align-items: start, $gap: 10px);
   }
@@ -111,6 +114,7 @@ img {
 
   &__feature {
     padding-left: 30px;
+    font-size: 0.9rem;
   }
 
   &__price {
@@ -120,7 +124,7 @@ img {
 
   &__btn {
     font-size: 0.6rem;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-basis: 100px;
   }
 
@@ -134,14 +138,19 @@ img {
 
 /* item-list  */
 .item-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
   flex-basis: 250px;
   flex-grow: 1;
   flex-shrink: 0;
   list-style-type: none;
   justify-content: start;
   @include flex($gap: 20px, $justify-content: start);
-  overflow: hidden;
   padding: 20px;
+  overflow-x: scroll;
 }
 
 /* search bar */
@@ -149,6 +158,7 @@ img {
   padding: 0 10px;
   // flex-grow: 1;
   width: 100%;
+  max-width: 400px;
   border-radius: 50px;
   height: 34px;
   background-color: white;
@@ -173,6 +183,20 @@ img {
 /*
 Header
 */
+.nav {
+  display: inline-block;
+  &__links {
+    display: none;
+  }
+
+  &__link {
+    color: var(--theme-secondary);
+    text-decoration: none;
+    &--active {
+      border-bottom: 2px solid var(--primary-color);
+    }
+  }
+}
 
 .header {
   position: absolute;
@@ -196,8 +220,18 @@ Header
     @include flex();
   }
 
-  nav {
-    display: inline-block;
+  &__icons-container {
+    @include flex($gap: 20px);
+    &__search-icon-wrapper {
+      display: none;
+      width: 21px;
+      height: 21px;
+    }
+
+    &__cart-icon-wrapper {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &__hamburger-icon-wrapper {
@@ -206,14 +240,13 @@ Header
   }
 
   &__logo-wrapper {
-    margin-left: calc(100vw / 4);
+    margin-left: calc(100vw / 5);
     width: 60px;
     height: 60px;
   }
 
-  &__cart-icon-wrapper {
-    width: 18px;
-    height: 18px;
+  &__login-btn {
+    display: none;
   }
 
   //   background for hero
@@ -259,7 +292,7 @@ body {
 
 /* HERO SECTION */
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;
   // background: linear-gradient(40deg, rgb(43, 45, 100), rgb(11, 11, 14));
   background: radial-gradient(
     circle at left,
@@ -270,8 +303,9 @@ body {
   padding-top: 120px;
   &__content {
     padding: 0 10px;
-    max-width: 300px;
+    max-width: 350px;
     max-height: 400px;
+    border: 1px solid green;
     &__title {
       color: var(--theme-secondary);
       // font-weight: 700;
@@ -283,7 +317,7 @@ body {
     }
 
     &__desc {
-      margin-top: 20px;
+      margin-top: 10px;
       font-size: 0.9rem;
       color: rgba(164, 164, 164, 1);
       line-height: 30px;
@@ -293,22 +327,23 @@ body {
   }
 
   &__flex-wrapper {
-    margin-top: 20px;
+    height: 50%;
     border: 1px solid pink;
     @include flex($flex-direction: column, $justify-content: center);
     overflow: hidden;
   }
 
   &__item-list {
-    margin-left: 50px;
     flex-basis: 180px;
-    height: 100px;
+    width: 70%;
     flex-grow: 0;
     flex-shrink: 0;
+    align-self: flex-end;
     border: 1px solid red;
     max-width: 100vw;
     list-style-type: none;
     overflow: hidden;
+    overflow-x: scroll;
     padding: 20px;
     align-items: flex-end;
   }
@@ -373,20 +408,23 @@ body {
   }
 
   &__btn-container {
+    border: 1px solid red;
     margin-top: 20px;
     width: 100%;
     justify-content: center;
   }
 
   &__btn {
-    padding: 15px 0;
+    padding: 0 15px;
+    min-width: 80px;
+    flex-basis: 50px;
+    font-size: 0.8rem;
   }
 }
 
 /* Popular Trends Section */
 
 .trend {
-  min-height: 100vh;
   border: 1px solid red;
   background: linear-gradient(180deg, rgb(29, 28, 42), black);
   overflow: hidden;
@@ -396,11 +434,21 @@ body {
     color: var(--theme-secondary);
     margin-bottom: 3 0px;
   }
+
+  &__item-list {
+    background-color: pink;
+    align-items: start;
+    padding: 10px;
+  }
+
+  &__card {
+    flex-shrink: 0;
+    flex-basis: 220px;
+  }
 }
 
 /* why buy article */
 .why-buy {
-  background: linear-gradient(left, red, yellow);
   @include flex(
     $flex-direction: column,
     $justify-content: start,
@@ -410,7 +458,7 @@ body {
   padding: 20px 10px;
   color: white;
   text-align: center;
-  border: 1px solid green;
+  background: linear-gradient(to left, rgb(94, 111, 209), rgb(51, 37, 111));
   margin: 10px 20px;
   &__title {
     font-size: 1.5rem;
@@ -510,10 +558,20 @@ body {
     border: 1px solid maroon;
     flex-basis: 5 0px;
     flex-grow: 0;
-  }
-  &__info {
-    padding: 10px;
-    background-color: rgba(55, 6, 101, 1);
+
+    &__hour {
+      background-color: rgba(55, 6, 101, 1);
+      padding: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      border-radius: 12px;
+      margin-bottom: 5px;
+    }
+
+    &__title {
+      color: rgba(255, 255, 255, 1);
+      font-weight: 400;
+    }
   }
 
   &__title {
@@ -545,8 +603,18 @@ body {
     text-align: center;
   }
 
-  &__card__detail {
+  &__card {
     background: rgba(55, 6, 101, 1);
+    border-radius: 12%;
+    border: 3px solid rgba(53, 88, 154, 1);
+    overflow: hidden;
+    min-width: 250px;
+
+    &__detail {
+      border-radius: 0px;
+      background-color: rgba(55, 6, 101, 1);
+      background-image: none;
+    }
   }
 }
 
@@ -602,6 +670,10 @@ body {
       padding: 10px 0;
       text-decoration: none;
       color: rgb(212, 209, 209);
+
+      &--active {
+        border-bottom: 1px solid var(--primary-color);
+      }
     }
 
     &__link:hover {
@@ -650,4 +722,118 @@ body {
   font-size: 0.8rem;
   text-align: center;
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .header {
+    justify-content: center;
+    border: 1px solid pink;
+    &__row--1 {
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: flex-end;
+      gap: 40px;
+    }
+
+    &__row--2 {
+      display: none;
+    }
+    &__hamburger-icon-wrapper {
+      display: none;
+    }
+
+    &__icons-container {
+      order: 1;
+
+      @include flex();
+      gap: 20px;
+      &__search-icon-wrapper {
+        display: block;
+        order: 1;
+      }
+
+      &__cart-icon-wrapper {
+        order: 2;
+      }
+    }
+
+    &__logo-wrapper {
+      width: 120px;
+      height: 120px;
+      order: 0;
+      margin: 0;
+      position: absolute;
+      border: 1px solid red;
+      left: 0;
+      top: 0;
+    }
+
+    &__login-btn {
+      display: block;
+      order: 1;
+      max-width: 100px;
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  .theme-toggler {
+    order: 0;
+    margin-right: 60px;
+  }
+
+  .nav {
+    &__links {
+      margin: 0px;
+      display: block;
+      list-style-type: none;
+      @include flex($gap: 20px);
+    }
+  }
+
+  nav {
+    order: 1;
+  }
+
+  /* hero section*/
+  .hero-section {
+    padding-top: 140px;
+    &__content {
+      margin-top: 20px;
+      max-width: 50%;
+      min-height: 400px;
+      border: 1px solid pink;
+      &__title {
+        font-size: 3.5rem;
+      }
+
+      &__desc {
+        max-height: 100%;
+      }
+    }
+    &__flex-wrapper {
+      flex-direction: row-reverse;
+    }
+
+    &__btn-container {
+      border: 1px solid purple;
+      height: 60px;
+    }
+
+    &__btn {
+      padding: 10px 15px;
+    }
+
+    &__item-list {
+      flex-grow: 1;
+    }
+    &__arrow-down-container {
+      flex-basis: 40%;
+      height: auto;
+      border: 1px solid red;
+      @include flex();
+      &__wrapper {
+        width: 60px;
+      }
+    }
+  }
 }

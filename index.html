@@ -13,30 +13,49 @@
       <div class="header__row header__row--1">
         <!-- nav -->
 
-        <nav>
+        <nav class="nav">
           <!-- icon-container -->
           <div class="header__hamburger-icon-wrapper">
             <img src="./icon/hamburger.png" alt="hamburger icon" />
           </div>
+          <ul class="nav__links">
+            <li><a href="#" class="nav__link nav__link--active">Home</a></li>
+            <li><a href="#" class="nav__link">Explore</a></li>
+            <li>
+              <a href="#" class="nav__link">Contact Us</a>
+            </li>
+          </ul>
         </nav>
-        <!-- header logo wrapper -->
+        <!-- logo -->
         <div class="header__logo-wrapper">
           <img src="./img/logo.png" alt="" />
         </div>
-        <!--theme  -->
-        <div class="theme-toggler">
-          <div class="theme-toggler__shade"></div>
-          <div class="theme-toggler__icon">
-            <img src="./icon/moon.png" alt="" />
+        <!-- header icons container -->
+        <div class="header__icons-container">
+          <!-- header logo wrapper -->
+
+          <!--theme  -->
+          <div class="theme-toggler">
+            <div class="theme-toggler__shade"></div>
+            <div class="theme-toggler__icon">
+              <img src="./icon/moon.png" alt="" />
+            </div>
+            <div class="theme-toggler__icon">
+              <img src="./icon/sun.png" alt="" />
+            </div>
           </div>
-          <div class="theme-toggler__icon">
-            <img src="./icon/sun.png" alt="" />
+          <!-- search icon -->
+          <div class="header__icons-container__search-icon-wrapper">
+            <img src="./icon/light-search.png" alt="" />
+            <img class="hide" src="./icon/dark-search.png" alt="" />
+          </div>
+          <!-- cart -->
+          <div class="header__icons-container__cart-icon-wrapper">
+            <img src="./icon/light-cart.png" alt="" />
           </div>
         </div>
-        <!-- cart -->
-        <div class="header__cart-icon-wrapper">
-          <img src="./icon/cart.png" alt="" />
-        </div>
+
+        <button class="btn btn--ghost header__login-btn">Login</button>
       </div>
       <!-- header row 2 -->
       <div class="header__row header__row--2">
@@ -96,13 +115,52 @@
               </div>
             </div>
           </li>
-          <li><div class="card hero-section__card"></div></li>
-          <!-- <li><div class="hero-section__item"></div></li>
-          <li><div class="hero-section__item"></div></li>  -->
+          <li>
+            <div class="card hero-section__card">
+              <div class="hero-section__card__img-wrapper">
+                <img src="./img/read-headphone.png" alt="beats headphone" />
+              </div>
+              <div class="hero-section__card__details">
+                <div class="hero-section__card__details__title">
+                  Wireless Headphones
+                </div>
+                <div class="hero-section__card__details__price">
+                  <span class="hero-section__card__details__price--discounted">
+                    $120
+                  </span>
+                  <span class="hero-section__card__details__price--actual">
+                    $180
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card hero-section__card">
+              <div class="hero-section__card__img-wrapper">
+                <img src="./img/read-headphone.png" alt="beats headphone" />
+              </div>
+              <div class="hero-section__card__details">
+                <div class="hero-section__card__details__title">
+                  Wireless Headphones
+                </div>
+                <div class="hero-section__card__details__price">
+                  <span class="hero-section__card__details__price--discounted">
+                    $120
+                  </span>
+                  <span class="hero-section__card__details__price--actual">
+                    $180
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
 
         <div class="hero-section__arrow-down-container">
-          <img src="./icon/arrow-down.png" alt="" />
+          <div class="hero-section__arrow-down-container__wrapper">
+            <img src="./icon/arrow-down.png" alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -112,7 +170,33 @@
       <h2 class="trend__title">Popular Trends</h2>
       <!-- trending ite,s -->
       <div class="item-list trend__item-list">
-        <section class="card">
+        <section class="card trend__card">
+          <div class="card__img-wrapper">
+            <img src="./img/headphones-square.png" alt="" />
+          </div>
+          <div class="card__detail">
+            <h3 class="card__title">
+              Wireless Headphones with Dolby Surround Sound
+            </h3>
+            <ul class="card__feature">
+              <li>Truely Wireless</li>
+              <li>Dolby Surround Sound</li>
+              <li>13hrs of playback time</li>
+              <li>Made in Germany</li>
+            </ul>
+            <span class="card__price"> $145 </span>
+            <div class="btn-container card__btn-container">
+              <button class="btn card__btn btn--ghost">
+                <span class="btn--ghost__icon-container"
+                  ><img src="icon/cart-orange.png" alt=""
+                /></span>
+                Add to card
+              </button>
+              <button class="btn card__btn btn--primary">Buy now</button>
+            </div>
+          </div>
+        </section>
+        <section class="card trend__card">
           <div class="card__img-wrapper">
             <img src="./img/headphones-square.png" alt="" />
           </div>
@@ -224,9 +308,35 @@
     <section class="new-arrivals">
       <h2 class="new-arrivals__title">New Arrivals</h2>
       <div class="item-list">
-        <section class="card">
+        <section class="card new-arrivals__card">
           <div class="card__img-wrapper">
-            <img src="./img/headphones-square.png" alt="" />
+            <img src="./img/brown-headphone.png" alt="" />
+          </div>
+          <div class="card__detail new-arrivals__card__detail">
+            <h3 class="card__title">
+              Wireless Headphones with Dolby Surround Sound
+            </h3>
+            <ul class="card__feature">
+              <li>Truely Wireless</li>
+              <li>Dolby Surround Sound</li>
+              <li>13hrs of playback time</li>
+              <li>Made in Germany</li>
+            </ul>
+            <span class="card__price"> $145 </span>
+            <div class="btn-container card__btn-container">
+              <button class="btn card__btn btn--ghost">
+                <span class="btn--ghost__icon-container"
+                  ><img src="icon/cart-orange.png" alt=""
+                /></span>
+                Add to card
+              </button>
+              <button class="btn card__btn btn--primary">Buy now</button>
+            </div>
+          </div>
+        </section>
+        <section class="card new-arrivals__card">
+          <div class="card__img-wrapper">
+            <img src="./img/brown-headphone.png" alt="" />
           </div>
           <div class="card__detail new-arrivals__card__detail">
             <h3 class="card__title">
