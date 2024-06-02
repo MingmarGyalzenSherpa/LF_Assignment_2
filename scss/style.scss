@@ -14,6 +14,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 18px;
   font-family: sans-serif;
   --primary-color: rgba(241, 74, 22, 1);
@@ -22,8 +23,14 @@ html {
   --mobile-dark-hero-bg-color: radial-gradient(
     circle at left,
     rgb(42, 42, 76),
-    rgb(24, 23, 28),
+    rgb(10, 10, 15),
     rgb(12, 12, 12)
+  );
+  --mobile-dark-hero-bg-color: radial-gradient(
+    circle at left,
+    rgb(49, 49, 79),
+    rgb(19, 17, 29),
+    rgb(25, 1, 27)
   );
   $primary-color: var(--primary-color);
   --theme-primary: black;
@@ -62,6 +69,7 @@ img {
 .btn {
   max-width: 224px;
   min-height: 45px;
+
   border-radius: 1rem;
   padding: 10px 10px;
   font-size: 1rem;
@@ -76,11 +84,14 @@ img {
     border: 1px solid transparent;
     color: white;
     background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(241, 74, 22, 0.6),
+      0 8px 16px rgba(241, 74, 22, 0.4);
   }
 
   &--ghost {
     @include flex($justify-content: center, $gap: 5px);
     border: 3px solid var(--primary-color);
+
     color: var(--primary-color);
     // border-radius: 1.4rem;
     background-color: transparent;
@@ -100,15 +111,20 @@ img {
 /* Card */
 .card {
   border-radius: 20px;
-  flex-basis: 250px;
+  flex-basis: 260px;
   flex-grow: 0;
 
+  &:hover {
+    border: 2px solid var(--primary-color);
+  }
   color: var(--theme-secondary);
   // border-radius: 10%;
 
   &__img-wrapper {
     width: 250px;
     height: 210px;
+    object-position: center;
+    object-fit: cover;
   }
   &__detail {
     background-image: linear-gradient(
@@ -306,12 +322,14 @@ body {
 .hero-section {
   min-height: 100vh;
   background: var(--mobile-dark-hero-bg-color);
-  background: radial-gradient(
-    at center left,
-    rgb(27, 56, 90) 32%,
-    rgb(15, 29, 48) 58%,
-    rgb(28, 19, 79) 96%
-  );
+  // background: radial-gradient(
+  //   at center left,
+  //   rgb(27, 56, 90) 32%,
+  //   rgb(15, 29, 48) 58%,
+  //   rgb(28, 19, 79) 80%,
+  //   rgb(28, 19, 79) 96%
+  // );
+
   &__content-wrapper {
     @include flex($justify-content: start);
   }
@@ -425,6 +443,9 @@ body {
     margin-top: 20px;
     min-height: 50px;
     display: inline- block;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__btn-container {
@@ -444,7 +465,8 @@ body {
 /* Popular Trends Section */
 
 .trend {
-  background: linear-gradient(180deg, rgb(29, 28, 42), black);
+  // background: linear-gradient(180deg, rgb(29, 28, 42), black);
+  min-height: 80vh;
   overflow: hidden;
   &__title {
     text-align: center;
@@ -460,8 +482,11 @@ body {
   }
 
   &__card {
+    overflow: hidden;
     flex-shrink: 0;
-    flex-basis: 220px;
+    flex-basis: 250px;
+    border: 2px solid white;
+    border-radius: 60px;
   }
 }
 
@@ -476,13 +501,9 @@ body {
   padding: 20px 10px;
   color: white;
   text-align: center;
-  background: linear-gradient(
-    -90deg,
-    rgb(53, 71, 169),
-    rgba(139, 24, 247, 0.698),
-    rgba(110, 14, 200, 0.698)
-  );
-  margin: 10px 20px;
+
+  background: linear-gradient(91deg, #370665 0%, #35589a 100%);
+  margin: 50px 20px;
   &__title {
     font-size: 1.5rem;
   }
@@ -630,7 +651,7 @@ body {
   &__card {
     background: rgba(55, 6, 101, 1);
 
-    border-radius: 12%;
+    border-radius: 50px;
     border: 3px solid rgba(53, 88, 154, 1);
     overflow: hidden;
     min-width: 250px;
@@ -673,10 +694,16 @@ body {
   &__small-img-wrapper-1 {
     margin-top: 10px;
     width: 110px;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__small-img-wrapper-2 {
     width: 190px;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -734,6 +761,7 @@ body {
     padding: 0px 20px;
   }
   &__input {
+    color: var(--theme-secondary);
     width: 100%;
     max-width: 300px;
     border: 2px solid var(--primary-color);
@@ -818,6 +846,11 @@ body {
       list-style-type: none;
       @include flex($gap: 20px);
     }
+    &__link {
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
   }
 
   nav {
@@ -839,6 +872,7 @@ body {
       }
     }
     &__content {
+      margin-left: 40px;
       margin-top: 50px;
       max-width: 50%;
       min-height: 350px;
@@ -919,12 +953,12 @@ body {
       flex-basis: 400px;
       flex-shrink: 1;
       height: fit-content;
+      animation: offer-animation 2s ease-in-out 0s infinite;
     }
     &__title {
       margin-bottom: 40px;
     }
     &__detail {
-      background-color: red;
       flex-shrink: 1;
       width: 40%;
     }
@@ -1005,6 +1039,7 @@ body {
 @media (min-width: 1200px) {
   .exclusive-offer {
     height: 100vh;
+
     &__title {
       margin-bottom: 80px;
     }
@@ -1039,5 +1074,17 @@ body {
       flex-shrink: 1;
       padding: 0;
     }
+  }
+}
+
+@keyframes offer-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }

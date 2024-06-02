@@ -15,6 +15,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 18px;
   font-family: sans-serif;
   --primary-color: rgba(241, 74, 22, 1);
@@ -23,8 +24,14 @@ html {
   --mobile-dark-hero-bg-color: radial-gradient(
     circle at left,
     rgb(42, 42, 76),
-    rgb(24, 23, 28),
+    rgb(10, 10, 15),
     rgb(12, 12, 12)
+  );
+  --mobile-dark-hero-bg-color: radial-gradient(
+    circle at left,
+    rgb(49, 49, 79),
+    rgb(19, 17, 29),
+    rgb(25, 1, 27)
   );
   --theme-primary: black;
   --theme-secondary: white;
@@ -65,6 +72,7 @@ img {
   border: 1px solid transparent;
   color: white;
   background-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(241, 74, 22, 0.6), 0 8px 16px rgba(241, 74, 22, 0.4);
 }
 .btn--ghost {
   display: flex;
@@ -89,13 +97,18 @@ img {
 /* Card */
 .card {
   border-radius: 20px;
-  flex-basis: 250px;
+  flex-basis: 260px;
   flex-grow: 0;
   color: var(--theme-secondary);
+}
+.card:hover {
+  border: 2px solid var(--primary-color);
 }
 .card__img-wrapper {
   width: 250px;
   height: 210px;
+  object-position: center;
+  object-fit: cover;
 }
 .card__detail {
   background-image: linear-gradient(0deg, rgb(64, 63, 63), rgb(118, 116, 116));
@@ -294,7 +307,6 @@ body {
 .hero-section {
   min-height: 100vh;
   background: var(--mobile-dark-hero-bg-color);
-  background: radial-gradient(at center left, rgb(27, 56, 90) 32%, rgb(15, 29, 48) 58%, rgb(28, 19, 79) 96%);
   padding-top: 120px;
 }
 .hero-section__content-wrapper {
@@ -392,6 +404,9 @@ body {
   min-height: 50px;
   display: inline- block;
 }
+.hero-section__arrow-down-container:hover {
+  transform: scale(1.2);
+}
 .hero-section__btn-container {
   margin-top: 20px;
   width: 100%;
@@ -406,7 +421,7 @@ body {
 
 /* Popular Trends Section */
 .trend {
-  background: linear-gradient(180deg, rgb(29, 28, 42), black);
+  min-height: 80vh;
   overflow: hidden;
 }
 .trend__title {
@@ -421,8 +436,11 @@ body {
   padding: 10px;
 }
 .trend__card {
+  overflow: hidden;
   flex-shrink: 0;
-  flex-basis: 220px;
+  flex-basis: 250px;
+  border: 2px solid white;
+  border-radius: 60px;
 }
 
 /* why buy article */
@@ -436,8 +454,8 @@ body {
   padding: 20px 10px;
   color: white;
   text-align: center;
-  background: linear-gradient(-90deg, rgb(53, 71, 169), rgba(139, 24, 247, 0.698), rgba(110, 14, 200, 0.698));
-  margin: 10px 20px;
+  background: linear-gradient(91deg, #370665 0%, #35589a 100%);
+  margin: 50px 20px;
 }
 .why-buy__title {
   font-size: 1.5rem;
@@ -581,7 +599,7 @@ body {
 }
 .new-arrivals__card {
   background: rgb(55, 6, 101);
-  border-radius: 12%;
+  border-radius: 50px;
   border: 3px solid rgb(53, 88, 154);
   overflow: hidden;
   min-width: 250px;
@@ -632,8 +650,14 @@ body {
   margin-top: 10px;
   width: 110px;
 }
+.qr-and-download-info__small-img-wrapper-1:hover {
+  transform: scale(1.2);
+}
 .qr-and-download-info__small-img-wrapper-2 {
   width: 190px;
+}
+.qr-and-download-info__small-img-wrapper-2:hover {
+  transform: scale(1.2);
 }
 
 /*footer */
@@ -695,6 +719,7 @@ body {
   padding: 0px 20px;
 }
 .news-letter__form__input {
+  color: var(--theme-secondary);
   width: 100%;
   max-width: 300px;
   border: 2px solid var(--primary-color);
@@ -776,6 +801,9 @@ body {
     align-items: center;
     gap: 20px;
   }
+  .nav__link:hover {
+    color: var(--primary-color);
+  }
   nav {
     order: 1;
   }
@@ -798,6 +826,7 @@ body {
     position: relative;
   }
   .hero-section__content {
+    margin-left: 40px;
     margin-top: 50px;
     max-width: 50%;
     min-height: 350px;
@@ -865,12 +894,12 @@ body {
     flex-basis: 400px;
     flex-shrink: 1;
     height: fit-content;
+    animation: offer-animation 2s ease-in-out 0s infinite;
   }
   .exclusive-offer__title {
     margin-bottom: 40px;
   }
   .exclusive-offer__detail {
-    background-color: red;
     flex-shrink: 1;
     width: 40%;
   }
@@ -956,6 +985,17 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     padding: 0;
+  }
+}
+@keyframes offer-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
