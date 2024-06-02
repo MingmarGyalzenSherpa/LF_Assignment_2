@@ -21,13 +21,7 @@ html {
   --primary-color: rgba(241, 74, 22, 1);
   --primary-hover-color: rgb(243, 227, 222);
   --ghost-hover-color: rgb(243, 227, 222);
-  --mobile-dark-hero-bg-color: radial-gradient(
-    circle at left,
-    rgb(42, 42, 76),
-    rgb(10, 10, 15),
-    rgb(12, 12, 12)
-  );
-  --mobile-dark-hero-bg-color: radial-gradient(
+  --dark-hero-bg-color: radial-gradient(
     circle at left,
     rgb(49, 49, 79),
     rgb(19, 17, 29),
@@ -282,11 +276,11 @@ Header
   cursor: pointer;
 }
 .theme-toggler__shade {
-  right: 0;
+  left: 26px;
   position: absolute;
-  width: 25px;
+  width: 27px;
   background-color: grey;
-  height: 25px;
+  height: 27px;
   border-radius: 50%;
 }
 .theme-toggler__shade:hover {
@@ -306,7 +300,8 @@ body {
 /* HERO SECTION */
 .hero-section {
   min-height: 100vh;
-  background: var(--mobile-dark-hero-bg-color);
+  overflow: hidden;
+  background: var(--dark-hero-bg-color);
   padding-top: 120px;
 }
 .hero-section__content-wrapper {
@@ -778,7 +773,7 @@ body {
     order: 0;
     margin: 0;
     position: absolute;
-    left: 0;
+    left: 35px;
     top: 0;
   }
   .header__login-btn {
@@ -809,20 +804,19 @@ body {
   }
   /* hero section*/
   .hero-section {
-    height: auto;
     padding-top: 100px;
   }
   .hero-section__content-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     gap: 2px;
   }
   .hero-section__content-wrapper .hero-img {
     display: block;
-    width: 50%;
-    height: 85vh;
+    width: 60%;
+    height: 790px;
     position: relative;
   }
   .hero-section__content {
