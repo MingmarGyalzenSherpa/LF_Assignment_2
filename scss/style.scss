@@ -3,6 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
 
 html {
   font-size: 18px;
@@ -10,6 +19,12 @@ html {
   --primary-color: rgba(241, 74, 22, 1);
   --primary-hover-color: rgb(243, 227, 222);
   --ghost-hover-color: rgb(243, 227, 222);
+  --mobile-dark-hero-bg-color: radial-gradient(
+    circle at left,
+    rgb(42, 42, 76),
+    rgb(24, 23, 28),
+    rgb(12, 12, 12)
+  );
   $primary-color: var(--primary-color);
   --theme-primary: black;
   --theme-secondary: white;
@@ -138,11 +153,6 @@ img {
 
 /* item-list  */
 .item-list {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  &::-webkit-scrollbar {
-    display: none;
-  }
   flex-basis: 250px;
   flex-grow: 1;
   flex-shrink: 0;
@@ -265,7 +275,9 @@ Header
   background-color: black;
   border-radius: 20px;
   @include flex($justify-content: space-between);
-
+  &:hover {
+    cursor: pointer;
+  }
   &__shade {
     right: 0;
     position: absolute;
@@ -293,19 +305,28 @@ body {
 /* HERO SECTION */
 .hero-section {
   min-height: 100vh;
-  // background: linear-gradient(40deg, rgb(43, 45, 100), rgb(11, 11, 14));
+  background: var(--mobile-dark-hero-bg-color);
   background: radial-gradient(
-    circle at left,
-    rgb(42, 42, 76),
-    rgb(24, 23, 28),
-    rgb(12, 12, 12)
+    at center left,
+    rgb(27, 56, 90) 32%,
+    rgb(15, 29, 48) 58%,
+    rgb(28, 19, 79) 96%
   );
+  &__content-wrapper {
+    @include flex($justify-content: start);
+  }
+
+  .hero-img {
+    display: none;
+  }
   padding-top: 120px;
   &__content {
+    //   background for hero
+
     padding: 0 10px;
     max-width: 340px;
     max-height: 400px;
-    border: 1px solid green;
+
     &__title {
       color: var(--theme-secondary);
       // font-weight: 700;
@@ -321,14 +342,14 @@ body {
       font-size: 0.9rem;
       color: rgba(164, 164, 164, 1);
       line-height: 30px;
-      max-height: 60px;
+      max-height: 300px;
       overflow: hidden;
     }
   }
 
   &__flex-wrapper {
     height: 50%;
-    border: 1px solid pink;
+
     @include flex($flex-direction: column, $justify-content: center);
     overflow: hidden;
   }
@@ -339,7 +360,7 @@ body {
     flex-grow: 0;
     flex-shrink: 0;
     align-self: flex-end;
-    border: 1px solid red;
+
     max-width: 100vw;
     list-style-type: none;
     overflow: hidden;
@@ -355,7 +376,6 @@ body {
     min-width: 200px;
     background: linear-gradient(to left, rgb(10, 15, 34), rgb(111, 112, 115));
     border-radius: 20px;
-    border: 1px solid white;
 
     // &::before {
     //   object-fit: cover;
@@ -408,7 +428,6 @@ body {
   }
 
   &__btn-container {
-    border: 1px solid red;
     margin-top: 20px;
     width: 100%;
     justify-content: center;
@@ -425,7 +444,6 @@ body {
 /* Popular Trends Section */
 
 .trend {
-  border: 1px solid red;
   background: linear-gradient(180deg, rgb(29, 28, 42), black);
   overflow: hidden;
   &__title {
@@ -436,6 +454,7 @@ body {
   }
 
   &__item-list {
+    overflow-x: scroll;
     align-items: start;
     padding: 10px;
   }
@@ -457,19 +476,24 @@ body {
   padding: 20px 10px;
   color: white;
   text-align: center;
-  background: linear-gradient(to left, rgb(94, 111, 209), rgb(51, 37, 111));
+  background: linear-gradient(
+    -90deg,
+    rgb(53, 71, 169),
+    rgba(139, 24, 247, 0.698),
+    rgba(110, 14, 200, 0.698)
+  );
   margin: 10px 20px;
   &__title {
     font-size: 1.5rem;
   }
 
   &__item-list {
+    overflow: hidden;
     padding: 0px;
     width: 50%;
     flex-grow: 0;
     gap: 0;
     flex-direction: column;
-    border: 1px solid red;
   }
 }
 
@@ -483,7 +507,6 @@ body {
   &__title {
     font-size: 1.1rem;
     white-space: wrap;
-    background-color: green;
     flex-basis: 100px;
     flex-grow: 1;
   }
@@ -496,7 +519,6 @@ body {
 
 /* Exclusive offer */
 .exclusive-offer {
-  border: 1px solid orange;
   margin: 10px;
   min-height: 100vh;
 
@@ -512,7 +534,6 @@ body {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 30px;
-    border: 1px solid green;
   }
 
   &__img-wrapper {
@@ -533,7 +554,6 @@ body {
 
   &__detail {
     margin-top: 20px;
-    border: 1px solid blue;
     min-width: 280px;
     text-align: center;
 
@@ -557,11 +577,9 @@ body {
 }
 
 .time-left {
-  border: 1px solid green;
   @include flex($gap: 10px);
 
   &__value {
-    border: 1px solid maroon;
     flex-basis: 5 0px;
     flex-grow: 0;
 
@@ -596,7 +614,7 @@ body {
   }
 
   &__item {
-    flex-basis: 700px;
+    flex-basis: 400px;
     flex-grow: 1;
     flex-shrink: 1;
     padding: 0;
@@ -611,6 +629,7 @@ body {
 
   &__card {
     background: rgba(55, 6, 101, 1);
+
     border-radius: 12%;
     border: 3px solid rgba(53, 88, 154, 1);
     overflow: hidden;
@@ -625,6 +644,7 @@ body {
 }
 
 .qr-and-download-info {
+  overflow: hidden;
   margin: 30px 20px;
   @include flex($flex-direction: column, $gap: 10px);
   padding: 20px 10px;
@@ -634,6 +654,11 @@ body {
 
   &__about {
     @include flex($flex-direction: column);
+    &__images {
+      width: 500px;
+      flex-grow: 1;
+      @include flex($gap: 2px, $flex-direction: column);
+    }
   }
 
   &__title {
@@ -659,12 +684,12 @@ body {
 .footer {
   background-color: rgba(55, 6, 101, 1);
   padding: 24px 24px 5px 24px;
+  display: grid;
 }
 
 .links {
   margin-top: 20px;
   font-size: 0.9rem;
-  @include flex($flex-direction: column, $align-items: start, $gap: 10px);
   &__list {
     color: white;
     font-weight: 400;
@@ -733,7 +758,6 @@ body {
 @media (min-width: 798px) {
   .header {
     justify-content: center;
-    border: 1px solid pink;
     &__row--1 {
       max-width: 1200px;
       margin: 0 auto;
@@ -769,7 +793,7 @@ body {
       order: 0;
       margin: 0;
       position: absolute;
-      border: 1px solid red;
+
       left: 0;
       top: 0;
     }
@@ -802,12 +826,22 @@ body {
 
   /* hero section*/
   .hero-section {
-    border: 2px solid yellow;
-    padding-top: 140px;
+    height: auto;
+    padding-top: 100px;
+    &__content-wrapper {
+      @include flex($align-items: start);
+      .hero-img {
+        display: block;
+        width: 50%;
+        height: 85vh;
+
+        position: relative;
+      }
+    }
     &__content {
+      margin-top: 50px;
       max-width: 50%;
-      min-height: 400px;
-      border: 1px solid pink;
+      min-height: 350px;
       &__title {
         font-size: 3.5rem;
       }
@@ -817,13 +851,15 @@ body {
       }
     }
     &__flex-wrapper {
+      position: relative;
+      top: -100px;
       flex-direction: row-reverse;
     }
 
     &__btn-container {
-      border: 1px solid purple;
       height: 60px;
       justify-content: flex-start;
+      align-items: stretch;
     }
 
     &__btn {
@@ -832,25 +868,27 @@ body {
 
     &__item-list {
       flex-grow: 1;
-      min-height: 180px;
+      min-height: 200px;
     }
     &__arrow-down-container {
       flex-basis: 40%;
       height: auto;
-      border: 1px solid red;
+
       @include flex();
       &__wrapper {
         width: 60px;
       }
     }
+
+    &__card {
+      opacity: 0.7;
+    }
   }
 
   .trend {
-    border: 1px solid green;
     padding-top: 40px;
     &__item-list {
       padding: 20px;
-      border: 1px solid red;
     }
   }
 
@@ -878,7 +916,6 @@ body {
     }
 
     &__img-wrapper {
-      border: 1px solid red;
       flex-basis: 400px;
       flex-shrink: 1;
       height: fit-content;
@@ -887,11 +924,81 @@ body {
       margin-bottom: 40px;
     }
     &__detail {
-      border: 1px solid pink;
       background-color: red;
       flex-shrink: 1;
       width: 40%;
     }
+  }
+
+  .other-accessories {
+    &__title {
+      font-size: 3rem;
+    }
+  }
+
+  .qr-and-download-info {
+    flex-direction: row;
+    align-items: center;
+
+    &__about {
+      &__images {
+        width: 500px;
+        flex-grow: 1;
+        flex-direction: row;
+      }
+    }
+
+    &__small-img-wrapper-1 {
+      margin-bottom: 13px;
+    }
+  }
+
+  .shop {
+    grid-area: shop;
+  }
+  .logo {
+    grid-area: logo;
+  }
+  .support {
+    grid-area: support;
+  }
+
+  .contact-us {
+    grid-area: contact-us;
+  }
+
+  .about-us {
+    grid-area: about-us;
+  }
+  .manufactured-by {
+    grid-area: mfc-by;
+  }
+  .social-medias {
+    grid-area: social-medias;
+  }
+  .news-letter {
+    text-align: center;
+    grid-area: news-letter;
+    &__form {
+      flex-direction: row;
+    }
+  }
+
+  .rights-reserved {
+    grid-area: rights-reserved;
+  }
+  .footer > * {
+  }
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". shop support about-us"
+      "logo shop support contact-us"
+      ". . . mfc-by"
+      "news-letter news-letter . social-medias"
+      ". rights-reserved rights-reserved .";
   }
 }
 
@@ -919,6 +1026,18 @@ body {
   .time-left {
     &__value__info {
       font-size: 2rem;
+    }
+  }
+
+  .other-accessories {
+    &__item-list {
+      justify-content: start;
+    }
+    &__item {
+      flex-basis: 40%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      padding: 0;
     }
   }
 }
