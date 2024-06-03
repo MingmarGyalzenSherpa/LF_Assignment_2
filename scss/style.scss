@@ -257,6 +257,7 @@ Header
       width: 21px;
       height: 21px;
       &:hover {
+        cursor: pointer;
         transform: scale(1.2);
       }
     }
@@ -265,6 +266,7 @@ Header
       width: 18px;
       height: 18px;
       &:hover {
+        cursor: pointer;
         transform: scale(1.2);
       }
     }

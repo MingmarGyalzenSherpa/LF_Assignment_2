@@ -246,6 +246,7 @@ Header
   height: 21px;
 }
 .header__icons-container__search-icon-wrapper:hover {
+  cursor: pointer;
   transform: scale(1.2);
 }
 .header__icons-container__cart-icon-wrapper {
@@ -253,6 +254,7 @@ Header
   height: 18px;
 }
 .header__icons-container__cart-icon-wrapper:hover {
+  cursor: pointer;
   transform: scale(1.2);
 }
 .header__hamburger-icon-wrapper {
