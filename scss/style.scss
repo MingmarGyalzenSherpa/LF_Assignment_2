@@ -116,6 +116,7 @@ img {
 
   &:hover {
     border: 2px solid var(--primary-color);
+    
   }
   color: white;
   // border-radius: 10%;
@@ -650,6 +651,11 @@ body {
   }
 
   &__item {
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+    transition: all 0.3s ease-in;
     flex-basis: 400px;
     flex-grow: 1;
     flex-shrink: 1;

@@ -4,6 +4,10 @@ const htmlEl = document.querySelector("html");
 const cartIconWrapper = document.querySelector(
   ".header__icons-container__cart-icon-wrapper"
 );
+const arrowDownWrapper = document.querySelector(
+  ".hero-section__arrow-down-container__wrapper"
+);
+const arrowDownIcons = arrowDownWrapper.querySelectorAll("img");
 const cartIcons = cartIconWrapper.querySelectorAll("img");
 console.log(cartIcons);
 
@@ -56,4 +60,7 @@ function switchTheme(e) {
   isDarkMode = !isDarkMode;
   searchIcons.forEach((searchIcon) => searchIcon.classList.toggle("hide"));
   cartIcons.forEach((cartIcon) => cartIcon.classList.toggle("hide"));
+  arrowDownIcons.forEach((arrowDownIcon) =>
+    arrowDownIcon.classList.toggle("hide")
+  );
 }
