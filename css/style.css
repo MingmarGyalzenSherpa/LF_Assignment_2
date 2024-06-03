@@ -206,6 +206,7 @@ Header
 .header {
   position: absolute;
   width: 100%;
+  z-index: 99;
   padding: 0px 10px;
   flex-wrap: wrap;
   min-height: 140px;
@@ -322,6 +323,8 @@ body {
   justify-content: start;
   align-items: center;
   gap: 2px;
+  max-width: 1400px;
+  margin: 0px auto;
 }
 .hero-section .hero-img {
   display: none;
@@ -462,7 +465,8 @@ body {
   color: white;
   text-align: center;
   background: linear-gradient(91deg, #370665 0%, #35589a 100%);
-  margin: 50px 20px;
+  max-width: 1400px;
+  margin: 50px auto;
 }
 .why-buy__title {
   font-size: 1.5rem;
@@ -500,7 +504,8 @@ body {
 
 /* Exclusive offer */
 .exclusive-offer {
-  margin: 10px;
+  max-width: 1400px;
+  margin: 10px auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -590,6 +595,8 @@ body {
 .other-accessories {
   text-align: center;
   font-size: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 .other-accessories__item-list {
   flex-wrap: wrap;
@@ -606,9 +613,14 @@ body {
   cursor: pointer;
 }
 
+.new-arrivals {
+  max-width: 1400px;
+  margin: 60px auto;
+}
 .new-arrivals__title {
   font-size: 2rem;
   text-align: center;
+  margin-bottom: 50px;
 }
 .new-arrivals__card {
   background: rgb(55, 6, 101);
@@ -625,7 +637,8 @@ body {
 
 .qr-and-download-info {
   overflow: hidden;
-  margin: 30px 20px;
+  max-width: 1400px;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -763,7 +776,7 @@ body {
     justify-content: center;
   }
   .header__row__nav {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     justify-content: flex-end;
     gap: 40px;
@@ -805,6 +818,9 @@ body {
     max-width: 100px;
     border: 1px solid var(--primary-color);
   }
+  .new-arrivals__item-list {
+    gap: 100px;
+  }
   .theme-toggler {
     order: 0;
     margin-right: 60px;
@@ -827,29 +843,33 @@ body {
   }
   /* hero section*/
   .hero-section {
-    padding-top: 100px;
+    padding-top: 50px;
+    position: relative;
+    z-index: 9;
   }
   .hero-section__content-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 2px;
   }
   .hero-section__content-wrapper .hero-img {
+    position: relative;
+    right: -4%;
     display: block;
     width: 60%;
     height: 790px;
     position: relative;
   }
   .hero-section__content {
-    margin-left: 40px;
-    margin-top: 50px;
+    margin-top: 100px;
     max-width: 50%;
     min-height: 350px;
   }
   .hero-section__content__title {
-    font-size: 3.5rem;
+    max-width: 600px;
+    font-size: 4rem;
   }
   .hero-section__content__desc {
     max-height: 100%;
@@ -887,10 +907,13 @@ body {
     opacity: 0.7;
   }
   .trend {
+    max-width: 1400px;
+    margin: 0 auto;
     padding-top: 40px;
   }
   .trend__item-list {
     padding: 20px;
+    gap: 100px;
   }
   .why-buy__item-list {
     width: 100%;
@@ -922,6 +945,7 @@ body {
   }
   .other-accessories__title {
     font-size: 3rem;
+    margin-bottom: 60px;
   }
   .qr-and-download-info {
     flex-direction: row;
@@ -973,7 +997,7 @@ body {
     grid-template-areas: ". shop support about-us" "logo shop support contact-us" ". . . mfc-by" "news-letter news-letter . social-medias" ". rights-reserved rights-reserved .";
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .exclusive-offer {
     height: 100vh;
   }

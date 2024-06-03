@@ -116,7 +116,6 @@ img {
 
   &:hover {
     border: 2px solid var(--primary-color);
-    
   }
   color: white;
   // border-radius: 10%;
@@ -228,6 +227,7 @@ Header
 .header {
   position: absolute;
   width: 100%;
+  z-index: 99;
   padding: 0px 10px;
   flex-wrap: wrap;
   min-height: 140px;
@@ -348,6 +348,8 @@ body {
 
   &__content-wrapper {
     @include flex($justify-content: start);
+    max-width: 1400px;
+    margin: 0px auto;
   }
 
   .hero-img {
@@ -513,13 +515,15 @@ body {
     $justify-content: start,
     $align-items: center
   );
+
   border-radius: 20px;
   padding: 20px 10px;
   color: white;
   text-align: center;
 
   background: linear-gradient(91deg, #370665 0%, #35589a 100%);
-  margin: 50px 20px;
+  max-width: 1400px;
+  margin: 50px auto;
   &__title {
     font-size: 1.5rem;
   }
@@ -556,7 +560,8 @@ body {
 
 /* Exclusive offer */
 .exclusive-offer {
-  margin: 10px;
+  max-width: 1400px;
+  margin: 10px auto;
   min-height: 100vh;
 
   &--bg {
@@ -645,7 +650,8 @@ body {
 .other-accessories {
   text-align: center;
   font-size: 1.5rem;
-
+  max-width: 1400px;
+  margin: 0 auto;
   &__item-list {
     flex-wrap: wrap;
   }
@@ -664,9 +670,12 @@ body {
 }
 
 .new-arrivals {
+  max-width: 1400px;
+  margin: 60px auto;
   &__title {
     font-size: 2rem;
     text-align: center;
+    margin-bottom: 50px;
   }
 
   &__card {
@@ -687,7 +696,8 @@ body {
 
 .qr-and-download-info {
   overflow: hidden;
-  margin: 30px 20px;
+  max-width: 1400px;
+  margin: 30px auto;
   @include flex($flex-direction: column, $gap: 10px);
   padding: 20px 10px;
   text-align: center;
@@ -814,7 +824,7 @@ body {
     justify-content: center;
     &__row {
       &__nav {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         justify-content: flex-end;
         gap: 40px;
@@ -863,6 +873,12 @@ body {
     }
   }
 
+  .new-arrivals {
+    &__item-list {
+      gap: 100px;
+    }
+  }
+
   .theme-toggler {
     order: 0;
     margin-right: 60px;
@@ -887,11 +903,16 @@ body {
   }
 
   /* hero section*/
+
   .hero-section {
-    padding-top: 100px;
+    padding-top: 50px;
+    position: relative;
+    z-index: 9;
     &__content-wrapper {
-      @include flex($align-items: center);
+      @include flex($align-items: start);
       .hero-img {
+        position: relative;
+        right: -4%;
         display: block;
         width: 60%;
         height: 790px;
@@ -900,12 +921,12 @@ body {
       }
     }
     &__content {
-      margin-left: 40px;
-      margin-top: 50px;
+      margin-top: 100px;
       max-width: 50%;
       min-height: 350px;
       &__title {
-        font-size: 3.5rem;
+        max-width: 600px;
+        font-size: 4rem;
       }
 
       &__desc {
@@ -948,9 +969,12 @@ body {
   }
 
   .trend {
+    max-width: 1400px;
+    margin: 0 auto;
     padding-top: 40px;
     &__item-list {
       padding: 20px;
+      gap: 100px;
     }
   }
 
@@ -995,6 +1019,7 @@ body {
   .other-accessories {
     &__title {
       font-size: 3rem;
+      margin-bottom: 60px;
     }
   }
 
@@ -1064,7 +1089,7 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .exclusive-offer {
     height: 100vh;
 
