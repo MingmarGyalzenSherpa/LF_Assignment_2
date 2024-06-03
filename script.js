@@ -1,6 +1,17 @@
 const themeToggler = document.querySelector(".theme-toggler");
 const themeTogglerShade = document.querySelector(".theme-toggler__shade");
 const htmlEl = document.querySelector("html");
+const cartIconWrapper = document.querySelector(
+  ".header__icons-container__cart-icon-wrapper"
+);
+const cartIcons = cartIconWrapper.querySelectorAll("img");
+console.log(cartIcons);
+
+const searchIconWrapper = document.querySelector(
+  ".header__icons-container__search-icon-wrapper"
+);
+const searchIcons = searchIconWrapper.querySelectorAll("img");
+console.log(searchIcons);
 
 const htmlStyle = getComputedStyle(htmlEl);
 const heroSectionEl = document.querySelector(".hero-section");
@@ -21,7 +32,7 @@ themeToggler.addEventListener("click", switchTheme);
 
 function switchTheme(e) {
   htmlEl.style.setProperty("--theme-primary", theme.secondaryColor);
-  htmlEl.style.setProperty("--theme-secondary", theme.primaryColorColor);
+  htmlEl.style.setProperty("--theme-secondary", theme.primaryColor);
   heroSectionEl.style.setProperty("background", theme.secondaryHeroBg);
 
   console.log(themeTogglerShade.offsetWidth);
@@ -29,7 +40,7 @@ function switchTheme(e) {
   console.log(isDarkMode);
   themeTogglerShade.style.setProperty(
     "left",
-    isDarkMode ? 0 + "px" : 27 + "px"
+    isDarkMode ? 4 + "px" : 27 + "px"
   );
   console.log(themeToggler);
   //swap
@@ -43,4 +54,6 @@ function switchTheme(e) {
   console.log(theme);
 
   isDarkMode = !isDarkMode;
+  searchIcons.forEach((searchIcon) => searchIcon.classList.toggle("hide"));
+  cartIcons.forEach((cartIcon) => cartIcon.classList.toggle("hide"));
 }

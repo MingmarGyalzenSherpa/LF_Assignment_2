@@ -71,16 +71,19 @@ img {
   font-weight: 700;
   flex-grow: 1;
 
-  &:hover {
-    background-color: var(--hover-color);
-    color: white;
-  }
+  // &:hover {
+  //   background-color: var(--hover-color);
+  //   color: var(--theme-secondary);
+  // }
   &--primary {
     border: 1px solid transparent;
     color: white;
     background-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(241, 74, 22, 0.6),
       0 8px 16px rgba(241, 74, 22, 0.4);
+    &:hover {
+      background-color: rgb(172, 19, 8);
+    }
   }
 
   &--ghost {
@@ -90,7 +93,9 @@ img {
     color: var(--primary-color);
     // border-radius: 1.4rem;
     background-color: transparent;
-
+    &:hover {
+      background-color: rgb(239, 230, 229);
+    }
     &__icon-container {
       width: 21px;
       height: 21px;
@@ -112,7 +117,7 @@ img {
   &:hover {
     border: 2px solid var(--primary-color);
   }
-  color: var(--theme-secondary);
+  color: white;
   // border-radius: 10%;
 
   &__img-wrapper {
@@ -230,15 +235,19 @@ Header
   &__row {
     width: 100%;
     // align-items: baseline;
+    &__nav {
+      @include flex($justify-content: space-between);
+    }
+    &__searchBar {
+      padding: 0 10px;
+      @include flex();
+    }
   }
 
-  &__row--1 {
-    @include flex($justify-content: space-between);
+  &__row-1 {
   }
 
-  &__row--2 {
-    padding: 0 10px;
-    @include flex();
+  &__row-2 {
   }
 
   &__icons-container {
@@ -247,11 +256,17 @@ Header
       display: none;
       width: 21px;
       height: 21px;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     &__cart-icon-wrapper {
       width: 18px;
       height: 18px;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 
@@ -282,19 +297,21 @@ Header
 .theme-toggler {
   position: relative;
   min-width: 50px;
-  padding: 5px 0px;
-  background-color: black;
+  padding: 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--theme-primary);
   border-radius: 20px;
   @include flex($justify-content: space-between);
   &:hover {
     cursor: pointer;
   }
   &__shade {
+    transition: all 0.3s linear;
     left: 26px;
     position: absolute;
-    width: 27px;
+    width: 22px;
     background-color: grey;
-    height: 27px;
+    height: 22px;
     border-radius: 50%;
   }
 
@@ -302,7 +319,7 @@ Header
     background-color: rgb(79, 79, 79);
   }
   &__icon {
-    width: 25px;
+    width: 20px;
     height: 20px;
   }
 }
@@ -595,7 +612,7 @@ body {
 
 .time-left {
   @include flex($gap: 10px);
-
+  color: white;
   &__value {
     flex-basis: 5 0px;
     flex-grow: 0;
@@ -713,6 +730,7 @@ body {
 .links {
   margin-top: 20px;
   font-size: 0.9rem;
+  color: white;
   &__list {
     color: white;
     font-weight: 400;
@@ -749,22 +767,25 @@ body {
   }
 }
 
-.news-letter__form {
-  @include flex($flex-direction: column, $gap: 10px);
-  margin-top: 10px;
-  &__btn {
-    min-width: 200px;
-    padding: 0px 20px;
-  }
-  &__input {
-    color: var(--theme-secondary);
-    width: 100%;
-    max-width: 300px;
-    border: 2px solid var(--primary-color);
-    outline: none;
-    background-color: transparent;
-    border-radius: 15px;
-    padding: 10px 20px;
+.news-letter {
+  color: white;
+  &__form {
+    @include flex($flex-direction: column, $gap: 10px);
+    margin-top: 10px;
+    &__btn {
+      min-width: 200px;
+      padding: 0px 20px;
+    }
+    &__input {
+      color: white;
+      width: 100%;
+      max-width: 300px;
+      border: 2px solid var(--primary-color);
+      outline: none;
+      background-color: transparent;
+      border-radius: 15px;
+      padding: 10px 20px;
+    }
   }
 }
 
@@ -777,21 +798,25 @@ body {
   font-size: 0.8rem;
   text-align: center;
   font-weight: 700;
+  color: white;
 }
 
 @media (min-width: 798px) {
   .header {
     justify-content: center;
-    &__row--1 {
-      max-width: 1200px;
-      margin: 0 auto;
-      justify-content: flex-end;
-      gap: 40px;
+    &__row {
+      &__nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: flex-end;
+        gap: 40px;
+      }
+
+      &__searchBar {
+        display: none;
+      }
     }
 
-    &__row--2 {
-      display: none;
-    }
     &__hamburger-icon-wrapper {
       display: none;
     }
@@ -819,7 +844,7 @@ body {
       position: absolute;
 
       left: 35px;
-      top: 0;
+      top: 10px;
     }
 
     &__login-btn {
