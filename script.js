@@ -45,6 +45,39 @@ let isDarkMode = true;
 
 themeToggler.addEventListener("click", switchTheme);
 
+// count down
+let hr = 5;
+let min = 16;
+let sec = 46;
+let totalTime = hr * 60 * 60 + min * 60 + sec;
+
+let hrEls = document.querySelectorAll(".time-left__value__hour");
+let minEls = document.querySelectorAll(".time-left__value__min");
+let secEls = document.querySelectorAll(".time-left__value__sec");
+
+hrEls.forEach((hrEl) => (hrEl.textContent = hr > 10 ? hr : "0" + hr));
+minEls.forEach((minEl) => (minEl.textContent = min));
+secEls.forEach((secEl) => (secEl.textContent = sec));
+
+function countDown() {
+  console.log(totalTime);
+  function converToHrMinSec(time) {
+    hr = Math.floor(totalTime / (60 * 60));
+    time = totalTime % (60 * 60);
+    console.log(time);
+    min = Math.floor(time / 60);
+    sec = time % 60;
+    console.log(time);
+  }
+  totalTime--;
+  converToHrMinSec(totalTime);
+  hrEls.forEach((hrEl) => (hrEl.textContent = hr > 10 ? hr : "0" + hr));
+  minEls.forEach((minEl) => (minEl.textContent = min));
+  secEls.forEach((secEl) => (secEl.textContent = sec));
+}
+
+setInterval(countDown, 1000);
+
 function switchTheme(e) {
   htmlEl.style.setProperty("--theme-primary", theme.secondaryColor);
   htmlEl.style.setProperty("--theme-secondary", theme.primaryColor);

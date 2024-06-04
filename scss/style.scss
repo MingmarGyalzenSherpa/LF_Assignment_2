@@ -638,11 +638,11 @@ body {
 
     &::before {
       content: url("../img/offer.png");
-      top: 0;
-      left: -20;
-      display: block;
       position: absolute;
-      background-color: transparent;
+      top: 0;
+      left: -30px;
+      display: block;
+      // background-color: red;
     }
   }
 
@@ -676,9 +676,8 @@ body {
   &__value {
     flex-basis: 5 0px;
     flex-grow: 0;
-
-    &__hour {
-      background-color: rgba(55, 6, 101, 1);
+    &__info {
+      background-color: rgb(55, 6, 101);
       padding: 10px;
       font-weight: 700;
       letter-spacing: 0.1rem;
@@ -1060,6 +1059,13 @@ body {
       flex-shrink: 1;
       height: fit-content;
       animation: offer-animation 2s ease-in-out 0s infinite;
+      &::before {
+        top: 0;
+        left: -10px;
+
+        display: block;
+        // background-color: red;
+      }
     }
     &__title {
       margin-bottom: 40px;

@@ -583,11 +583,10 @@ body {
 }
 .exclusive-offer__img-wrapper::before {
   content: url("../img/offer.png");
-  top: 0;
-  left: -20;
-  display: block;
   position: absolute;
-  background-color: transparent;
+  top: 0;
+  left: -30px;
+  display: block;
 }
 .exclusive-offer__detail {
   margin-top: 20px;
@@ -625,7 +624,7 @@ body {
   flex-basis: 5 0px;
   flex-grow: 0;
 }
-.time-left__value__hour {
+.time-left__value__info {
   background-color: rgb(55, 6, 101);
   padding: 10px;
   font-weight: 700;
@@ -981,6 +980,11 @@ body {
     flex-shrink: 1;
     height: fit-content;
     animation: offer-animation 2s ease-in-out 0s infinite;
+  }
+  .exclusive-offer__img-wrapper::before {
+    top: 0;
+    left: -10px;
+    display: block;
   }
   .exclusive-offer__title {
     margin-bottom: 40px;
