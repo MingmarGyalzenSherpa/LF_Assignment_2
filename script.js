@@ -1,12 +1,23 @@
 const themeToggler = document.querySelector(".theme-toggler");
 const themeTogglerShade = document.querySelector(".theme-toggler__shade");
 const htmlEl = document.querySelector("html");
+
+const hamburgerWrapper = document.querySelector(
+  ".header__hamburger-icon-wrapper"
+);
+const hamburgerWrapperIcons = hamburgerWrapper.querySelectorAll("img");
+console.log(hamburgerWrapperIcons);
+
+// cart icon wrapper
 const cartIconWrapper = document.querySelector(
   ".header__icons-container__cart-icon-wrapper"
 );
+
+// hero section wrapper
 const arrowDownWrapper = document.querySelector(
   ".hero-section__arrow-down-container__wrapper"
 );
+
 const arrowDownIcons = arrowDownWrapper.querySelectorAll("img");
 const cartIcons = cartIconWrapper.querySelectorAll("img");
 console.log(cartIcons);
@@ -62,5 +73,8 @@ function switchTheme(e) {
   cartIcons.forEach((cartIcon) => cartIcon.classList.toggle("hide"));
   arrowDownIcons.forEach((arrowDownIcon) =>
     arrowDownIcon.classList.toggle("hide")
+  );
+  hamburgerWrapperIcons.forEach((hamburgerIcon) =>
+    hamburgerIcon.classList.toggle("hide")
   );
 }
