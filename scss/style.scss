@@ -434,7 +434,7 @@ body {
 
   &__flex-wrapper {
     z-index: 999;
-
+    margin-top: 40px;
     @include flex($flex-direction: column, $justify-content: center);
     overflow: hidden;
   }
@@ -983,6 +983,7 @@ body {
     }
     &__flex-wrapper {
       position: relative;
+      margin-top: 0;
       top: -100px;
       height: 50%;
       flex-direction: row-reverse;
@@ -1187,7 +1188,7 @@ body {
     }
     &__content {
       &__title {
-        margin: 2rem 0;
+        margin-bottom: 1.7rem;
         font-size: 4rem;
       }
     }
