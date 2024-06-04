@@ -349,7 +349,7 @@ body {
   &__content-wrapper {
     @include flex($justify-content: start);
     max-width: 1400px;
-    margin: 0px auto;
+    margin: 0 auto;
   }
 
   .hero-img {
@@ -909,13 +909,14 @@ body {
     position: relative;
     z-index: 9;
     &__content-wrapper {
-      @include flex($align-items: start);
+      // @include flex($align-items: start);
       .hero-img {
         position: relative;
         right: -4%;
         display: block;
         width: 60%;
-        height: 790px;
+        height: 100vh;
+        margin-left: auto;
 
         position: relative;
       }
@@ -935,7 +936,6 @@ body {
     }
     &__flex-wrapper {
       position: relative;
-      top: -100px;
       flex-direction: row-reverse;
     }
 

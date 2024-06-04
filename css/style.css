@@ -324,7 +324,7 @@ body {
   align-items: center;
   gap: 2px;
   max-width: 1400px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 .hero-section .hero-img {
   display: none;
@@ -847,19 +847,13 @@ body {
     position: relative;
     z-index: 9;
   }
-  .hero-section__content-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    gap: 2px;
-  }
   .hero-section__content-wrapper .hero-img {
     position: relative;
     right: -4%;
     display: block;
     width: 60%;
-    height: 790px;
+    height: 100vh;
+    margin-left: auto;
     position: relative;
   }
   .hero-section__content {
@@ -876,7 +870,6 @@ body {
   }
   .hero-section__flex-wrapper {
     position: relative;
-    top: -100px;
     flex-direction: row-reverse;
   }
   .hero-section__btn-container {
