@@ -72,8 +72,8 @@ function countDown() {
   totalTime--;
   converToHrMinSec(totalTime);
   hrEls.forEach((hrEl) => (hrEl.textContent = hr > 10 ? hr : "0" + hr));
-  minEls.forEach((minEl) => (minEl.textContent = min));
-  secEls.forEach((secEl) => (secEl.textContent = sec));
+  minEls.forEach((minEl) => (minEl.textContent = min > 10 ? min : "0" + min));
+  secEls.forEach((secEl) => (secEl.textContent = sec > 10 ? sec : "0" + sec));
 }
 
 setInterval(countDown, 1000);
