@@ -399,7 +399,7 @@ body {
   overflow: hidden;
 }
 .hero-section__flex-wrapper {
-  height: 50%;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -408,6 +408,7 @@ body {
   overflow: hidden;
 }
 .hero-section__item-list {
+  top: -50px;
   flex-basis: 180px;
   width: 70%;
   flex-grow: 0;
@@ -919,6 +920,8 @@ body {
   }
   .hero-section__flex-wrapper {
     position: relative;
+    top: -100px;
+    height: 50%;
     flex-direction: row-reverse;
   }
   .hero-section__btn-container {

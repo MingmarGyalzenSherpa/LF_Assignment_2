@@ -434,13 +434,14 @@ body {
   }
 
   &__flex-wrapper {
-    height: 50%;
+    z-index: 999;
 
     @include flex($flex-direction: column, $justify-content: center);
     overflow: hidden;
   }
 
   &__item-list {
+    top: -50px;
     flex-basis: 180px;
     width: 70%;
     flex-grow: 0;
@@ -986,6 +987,8 @@ body {
     }
     &__flex-wrapper {
       position: relative;
+      top: -100px;
+      height: 50%;
       flex-direction: row-reverse;
     }
 
