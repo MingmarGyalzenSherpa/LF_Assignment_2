@@ -45,6 +45,19 @@ let isDarkMode = true;
 
 themeToggler.addEventListener("click", switchTheme);
 
+// toggle side bar
+
+const sideBar = document.querySelector(".mb-nav-container");
+const crossBtn = document.querySelector(".cross-icon");
+function toggleSideBar() {
+  sideBar.classList.toggle("hide");
+  console.log(sideBar);
+
+  console.log("hey");
+}
+crossBtn.addEventListener("click", toggleSideBar);
+hamburgerWrapper.addEventListener("click", toggleSideBar);
+
 // count down
 let hr = 5;
 let min = 16;
@@ -60,14 +73,11 @@ minEls.forEach((minEl) => (minEl.textContent = min));
 secEls.forEach((secEl) => (secEl.textContent = sec));
 
 function countDown() {
-  console.log(totalTime);
   function converToHrMinSec(time) {
     hr = Math.floor(totalTime / (60 * 60));
     time = totalTime % (60 * 60);
-    console.log(time);
     min = Math.floor(time / 60);
     sec = time % 60;
-    console.log(time);
   }
   totalTime--;
   converToHrMinSec(totalTime);

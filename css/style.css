@@ -87,7 +87,7 @@ img {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .btn-container {
@@ -241,9 +241,26 @@ Header
 */
 .nav {
   display: inline-block;
+  position: relative;
 }
 .nav__links {
   display: none;
+}
+.nav__links--mb {
+  display: block;
+  width: 50vw;
+  top: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.nav__links--mb .nav__link--active {
+  border-bottom: 4px solid var(--theme-primary);
+}
+.nav__links--mb .nav__link:hover {
+  color: var(--theme-primary);
 }
 .nav__link {
   color: var(--theme-secondary);
@@ -251,6 +268,21 @@ Header
 }
 .nav__link--active {
   border-bottom: 2px solid var(--primary-color);
+}
+
+.mb-nav-container {
+  background-color: var(--primary-color);
+  position: absolute;
+  display: flex;
+  padding: 20px 10px;
+  top: -21px;
+  left: -10px;
+  min-height: 100vh;
+}
+
+.cross-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .header {
@@ -275,6 +307,7 @@ Header
   justify-content: space-between;
   align-items: center;
   gap: 2px;
+  position: relative;
 }
 .header__row__searchBar {
   padding: 0 10px;
@@ -863,6 +896,9 @@ body {
     order: 1;
     max-width: 100px;
     border: 1px solid var(--primary-color);
+  }
+  .mb-nav-container {
+    display: none;
   }
   .new-arrivals__item-list {
     gap: 100px;

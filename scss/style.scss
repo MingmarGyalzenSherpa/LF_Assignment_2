@@ -103,7 +103,7 @@ img {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 // buttons
 
@@ -262,8 +262,29 @@ Header
 */
 .nav {
   display: inline-block;
+  position: relative;
   &__links {
     display: none;
+
+    &--mb {
+      display: block;
+      width: 50vw;
+      top: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+
+      .nav__link {
+        &--active {
+          border-bottom: 4px solid var(--theme-primary);
+        }
+        &:hover {
+          color: var(--theme-primary);
+        }
+      }
+    }
   }
 
   &__link {
@@ -273,6 +294,21 @@ Header
       border-bottom: 2px solid var(--primary-color);
     }
   }
+}
+
+.mb-nav-container {
+  background-color: var(--primary-color);
+  position: absolute;
+  display: flex;
+  padding: 20px 10px;
+  top: -21px;
+  left: -10px;
+  min-height: 100vh;
+}
+
+.cross-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .header {
@@ -289,6 +325,7 @@ Header
     // align-items: baseline;
     &__nav {
       @include flex($justify-content: space-between);
+      position: relative;
     }
     &__searchBar {
       padding: 0 10px;
@@ -918,6 +955,10 @@ body {
       max-width: 100px;
       border: 1px solid var(--primary-color);
     }
+  }
+
+  .mb-nav-container {
+    display: none;
   }
 
   .new-arrivals {
